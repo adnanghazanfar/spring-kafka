@@ -1,0 +1,19 @@
+<configuration scan="true" scanPeriod="60 seconds">
+
+    <property name="log_pattern"
+              value='%d{ISO8601} [%-10.10thread] %-5.5level %-35.35logger{10} %X{SourceIPAddress} %X{Country} %X{Channel} %X{CorrelationID} %X{Session} %X{ExecutorProfile} %X{RequesterProfile} - %m%n'/>
+
+    <appender name="APPLOG" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>${log_pattern}</pattern>
+        </encoder>
+    </appender>
+
+    <logger name="org.springframework" level="INFO"/>
+    <logger name="org.springframework.kafka" level="DEBUG"/>
+
+    <root level="INFO">
+        <appender-ref ref="APPLOG"/>
+    </root>
+
+</configuration>
