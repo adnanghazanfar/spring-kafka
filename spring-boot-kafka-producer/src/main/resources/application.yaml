@@ -1,0 +1,20 @@
+server:
+  port: 8081
+
+kafka:
+  topic: first_topic
+
+spring:
+  kafka:
+    bootstrap-servers: 127.0.0.1:19092
+    properties:
+      max.block.ms: 30000
+      auto.register.schemas: true
+    producer:
+      client-id: ag
+      acks: all
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value.serializer: org.apache.kafka.common.serialization.StringSerializer
+      # value-serializer: StringSerializer
+      # properties:
+        #value.ing.serde.avro.sharedsecret: secret

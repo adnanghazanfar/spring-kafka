@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class MessageService {
 
-    @Value("${kafka.template.topic}")
+    @Value("${kafka.topic}")
     String topicName;
 
     final KafkaTemplate<String, String> kafkaTemplate;
